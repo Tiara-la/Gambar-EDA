@@ -39,15 +39,6 @@ tepat untuk data.
 Dataset yang saya gunakan adalah dataset harga mobil bekas [Kaggel](https://www.kaggle.com/balajimummidi/used-cars-in-cars24/data?select=Cars24.csv). Didalam dataset set ini terdapat 5918 rows × 11 columns.
 
 Variabel-variabel pada Harga Mobil Kaggle dataset adalah sebagai berikut:
-- name : nama mobil
-- year : tahun mobil ini dibeli
-- selling_price : harga dimana mobil itu dijual
-- km_driven : Jumlah Kilometer yang telah dilalui mobil
-- fuel : jenis bahan bakar mobil (bensin / solar / CNG / LPG / listrik)
-- seller_type : kategori Penjual apakah Perorangan atau Dealer
-- transmission : transmisi gigi mobil (Otomatis/Manual)
-- owner : status urutan pemilik mobil terakhir
-
 - Unnamed: 0 : nomor baris
 - Car Brand : Nama mobil
 - Model : model mobil	
@@ -63,7 +54,9 @@ Variabel-variabel pada Harga Mobil Kaggle dataset adalah sebagai berikut:
 Tahapan yang dilakukan untuk memahami data adalah :
 - **Data loading** untuk membaca file dataset  dalam komputer atau local machine. upload dataset tersebut langsung ke file storage di Google Colab.
 - **Exploratory Data Analysis (EDA)** merupakan proses investigasi awal pada data untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data. 
+
 -- **Exploratory Data Analysis - Deskripsi Variabel** untuk memahami deskripsi variabel pada data. Untuk mengecek informasi pada dataset dengan fungsi info() dan menggunakan fungsi describe() untuk memberikan informasi statistik pada masing-masing kolom.
+
 -- **Exploratory Data Analysis - Menangani Missing Value dan Outliers**  untuk cek adanya missing value atau tidak. Kemudian mendeteksi dan menangani outliers. Teknik yang digunakan adalah teknik visualisasi data dan IQR method. Teknik visualisasi yang digunakan adalah jenis boxplot. Boxplot menunjukkan ukuran lokasi dan penyebaran, serta memberikan informasi tentang simetri dan outliers. Visualisasi hanya digunakan pada data numerik ['Model_Year', 'Price', 'Driven', 'Ownership', 'EMI']. Selanjutnya adalah mengatasi outliers tersebut dengan metode IQR dengan membuat batas bawah dan batas atas.
         Berikut persamaannya:
         
@@ -71,19 +64,37 @@ Tahapan yang dilakukan untuk memahami data adalah :
             
             Batas atas = Q3 + 1.5 * IQR
     -- **Exploratory Data Analysis - Univariate Analysis** analisis univariate adalah melakukan analisis terhadap satu jenis (variasi). Dengan kata lain, analisis univariate merupakan proses untuk mengeksplorasi dan menjelaskan setiap variabel dalam kumpulan data secara terpisah. Cara yang digunakan adalah membagi fitur pada dataset menjadi dua bagian, yaitu numerical features dan categorical features. Lalu melakukan analisis terhadap fitur kategori terlebih dahulu ['Car_Brand', 'Model', 'Location', 'Fuel', 'Gear']. 
+    
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/fuel%20uni.png)
+
 Dari data persentase dapat kita simpulkan bahwa bahan bakar yang paling banyak digunakan adalah jenis bahan bakar Petrol dan Diesel.
+
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/car%20brand%20uni.png)
+
 Dari data persentase dapat kita simpulkan bahwa car brand paling banyak muncul adalah brand Maruti.
+
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/gear%20uni.png)
+
 Dari data persentase dapat kita simpulkan bahwa jenis transmisi gigi mobil yang paling banyak adalah manual.
+
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/model%20uni.png)
+
 Dari data persentase dapat kita lihat kalau diagram terlalu jenis model sehingga diagram tidak bisa terbaca. Namun data analisis menyebutkan model Alto 800LXI adalah model yang lebih banyak keluar dengan 143 jumlah sampel.
+
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/location%20uni.png)
+
 Dari data persentase dapat kita simpulkan bahwa daerah yang paling banyak menjual mobil bekas adalah kota Delhi, lalu diikuti kota Mumbai, Bangalore, Chennai, dan Hyderabad.
 Setelah fitur kategori dilanjutkan dengan fitur numerik dengan melihat histogram masing-masing fiturnya.
+
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/histo%20numerik.png)
-kita bisa memperoleh beberapa informasi, antara lain:...........
+
+kita bisa memperoleh beberapa informasi, antara lain:
+- Peningkatan harga mobil sebanding dengan penurunan jumlah driven.
+- Rentang harga mobil cukup tinggi yaitu dari skala EMI 7000 sampai 10000.
+- Rentang harga mobil cukup tinggi yaitu dari Tahun 2014 sampai 2018.
+- Rata-rata pemilik mobil adalah dari pemilik pertama
+
+Distribusi harga miring ke kanan (right-skewed). Hal ini akan berimplikasi pada model.
     -- **Exploratory Data Analysis - Multivariate Analysis** Analisis multivariate adalah melakukan analisis terhadap banyak variasi variabel. Dengan kata lain, multivariate analysis merupakan proses eksplorasi yang melibatkan banyak (dua atau lebih) variabel pada data. Pertama mengecek rata-rata harga terhadap masing-masing fitur untuk mengetahui pengaruh fitur kategori terhadap harga.
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/multi%20car_brand.png)
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/multi%20fuel2.png)
