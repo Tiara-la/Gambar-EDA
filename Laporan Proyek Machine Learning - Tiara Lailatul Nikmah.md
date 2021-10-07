@@ -6,7 +6,7 @@ Saya memilih domain ekonomi dan bisnis yaitu berupa bisnis penjualan mobil bekas
 
 Mengapa permasalahan tersebut harus diselesaikan karena untuk memudahkan para peminat atau pembeli mobil bekas bisa mengetahui harga yang layak dari mobil yang akan mereka beli. Dan memudahkan penjual dalam menentukan harga yang pas dengan mobil yang akan mereka jual. Karena kualitas mobil dan harga mobil berpengaruh terhadap keputusan pembelian mobil bekas. Jika harga dan kualitasnya tidak cocok ada kemungkinan besar pembeli tidak akan jadi membeli. Maka diperlukanlah model analisis prediksi yang tepat mengenai harga mobil bekas berdasarkan spesifikasinya. )
 
-Sumber referensi terkait: [tautan] (http://eprints.undip.ac.id/14009/) (http://journal.unj.ac.id/unj/index.php/jrmsi/article/view/785/694) (https://www.jurnal.syntaxliterate.co.id/index.php/syntax-literate/article/view/2716/2076)
+Sumber referensi terkait: (http://eprints.undip.ac.id/14009/) (http://journal.unj.ac.id/unj/index.php/jrmsi/article/view/785/694) (https://www.jurnal.syntaxliterate.co.id/index.php/syntax-literate/article/view/2716/2076)
 
 ## Business Understanding
 
@@ -59,10 +59,12 @@ Tahapan yang dilakukan untuk memahami data adalah :
 
 -- **Exploratory Data Analysis - Menangani Missing Value dan Outliers**  untuk cek adanya missing value atau tidak. Kemudian mendeteksi dan menangani outliers. Teknik yang digunakan adalah teknik visualisasi data dan IQR method. Teknik visualisasi yang digunakan adalah jenis boxplot. Boxplot menunjukkan ukuran lokasi dan penyebaran, serta memberikan informasi tentang simetri dan outliers. Visualisasi hanya digunakan pada data numerik ['Model_Year', 'Price', 'Driven', 'Ownership', 'EMI']. Selanjutnya adalah mengatasi outliers tersebut dengan metode IQR dengan membuat batas bawah dan batas atas.
 Berikut persamaannya:
+
      Batas bawah = Q1 - 1.5 * IQR
+     
       Batas atas = Q3 + 1.5 * IQR
 
-    -- **Exploratory Data Analysis - Univariate Analysis** analisis univariate adalah melakukan analisis terhadap satu jenis (variasi). Dengan kata lain, analisis univariate merupakan proses untuk mengeksplorasi dan menjelaskan setiap variabel dalam kumpulan data secara terpisah. Cara yang digunakan adalah membagi fitur pada dataset menjadi dua bagian, yaitu numerical features dan categorical features. Lalu melakukan analisis terhadap fitur kategori terlebih dahulu ['Car_Brand', 'Model', 'Location', 'Fuel', 'Gear']. 
+-- **Exploratory Data Analysis - Univariate Analysis** analisis univariate adalah melakukan analisis terhadap satu jenis (variasi). Dengan kata lain, analisis univariate merupakan proses untuk mengeksplorasi dan menjelaskan setiap variabel dalam kumpulan data secara terpisah. Cara yang digunakan adalah membagi fitur pada dataset menjadi dua bagian, yaitu numerical features dan categorical features. Lalu melakukan analisis terhadap fitur kategori terlebih dahulu ['Car_Brand', 'Model', 'Location', 'Fuel', 'Gear']. 
     
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/fuel%20uni.png)
 
