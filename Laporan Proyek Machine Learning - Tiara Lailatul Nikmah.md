@@ -58,11 +58,9 @@ Tahapan yang dilakukan untuk memahami data adalah :
 -- **Exploratory Data Analysis - Deskripsi Variabel** untuk memahami deskripsi variabel pada data. Untuk mengecek informasi pada dataset dengan fungsi info() dan menggunakan fungsi describe() untuk memberikan informasi statistik pada masing-masing kolom.
 
 -- **Exploratory Data Analysis - Menangani Missing Value dan Outliers**  untuk cek adanya missing value atau tidak. Kemudian mendeteksi dan menangani outliers. Teknik yang digunakan adalah teknik visualisasi data dan IQR method. Teknik visualisasi yang digunakan adalah jenis boxplot. Boxplot menunjukkan ukuran lokasi dan penyebaran, serta memberikan informasi tentang simetri dan outliers. Visualisasi hanya digunakan pada data numerik ['Model_Year', 'Price', 'Driven', 'Ownership', 'EMI']. Selanjutnya adalah mengatasi outliers tersebut dengan metode IQR dengan membuat batas bawah dan batas atas.
-        Berikut persamaannya:
-        
-            Batas bawah = Q1 - 1.5 * IQR
-            
-            Batas atas = Q3 + 1.5 * IQR
+Berikut persamaannya:
+     Batas bawah = Q1 - 1.5 * IQR
+      Batas atas = Q3 + 1.5 * IQR
 
     -- **Exploratory Data Analysis - Univariate Analysis** analisis univariate adalah melakukan analisis terhadap satu jenis (variasi). Dengan kata lain, analisis univariate merupakan proses untuk mengeksplorasi dan menjelaskan setiap variabel dalam kumpulan data secara terpisah. Cara yang digunakan adalah membagi fitur pada dataset menjadi dua bagian, yaitu numerical features dan categorical features. Lalu melakukan analisis terhadap fitur kategori terlebih dahulu ['Car_Brand', 'Model', 'Location', 'Fuel', 'Gear']. 
     
