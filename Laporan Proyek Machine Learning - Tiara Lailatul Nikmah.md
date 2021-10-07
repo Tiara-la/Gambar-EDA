@@ -63,6 +63,7 @@ Tahapan yang dilakukan untuk memahami data adalah :
             Batas bawah = Q1 - 1.5 * IQR
             
             Batas atas = Q3 + 1.5 * IQR
+
     -- **Exploratory Data Analysis - Univariate Analysis** analisis univariate adalah melakukan analisis terhadap satu jenis (variasi). Dengan kata lain, analisis univariate merupakan proses untuk mengeksplorasi dan menjelaskan setiap variabel dalam kumpulan data secara terpisah. Cara yang digunakan adalah membagi fitur pada dataset menjadi dua bagian, yaitu numerical features dan categorical features. Lalu melakukan analisis terhadap fitur kategori terlebih dahulu ['Car_Brand', 'Model', 'Location', 'Fuel', 'Gear']. 
     
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/fuel%20uni.png)
@@ -94,7 +95,6 @@ kita bisa memperoleh beberapa informasi, antara lain:
 - Rentang harga mobil cukup tinggi yaitu dari Tahun 2014 sampai 2018.
 - Rata-rata pemilik mobil adalah dari pemilik pertama
 
-Distribusi harga miring ke kanan (right-skewed). Hal ini akan berimplikasi pada model.
     -- **Exploratory Data Analysis - Multivariate Analysis** Analisis multivariate adalah melakukan analisis terhadap banyak variasi variabel. Dengan kata lain, multivariate analysis merupakan proses eksplorasi yang melibatkan banyak (dua atau lebih) variabel pada data. Pertama mengecek rata-rata harga terhadap masing-masing fitur untuk mengetahui pengaruh fitur kategori terhadap harga.
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/multi%20car_brand.png)
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/multi%20fuel2.png)
