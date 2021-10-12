@@ -2,6 +2,8 @@
 ---
 ## Domain Proyek
 ---
+- Latar Belakang
+
 Saya memilih domain ekonomi dan bisnis yaitu berupa bisnis penjualan mobil bekas di India. Latar belakang saya memilih domain ini adalah karena zaman modern sekarang ini tren penjualan mobil bekas sangat diminati. Berbeda dengan harga mobil baru, harga mobil bekas dipengaruhi oleh banyak faktor. Seperti contohnya mobil yang bermerek sama dan berspesifikasi sama belum tentu memiliki harga yang sama. Hal yang dinilai paling penting adalah kualitas mobil tersebut apakah masih layak pakai atau tidak. Para pembeli biasanya sebelum membeli akan menilai beberapa hal terlebih dahulu seperti tahun kapan mobil ini dibeli, berapa kilometer jarak yang sudah ditempuhnya, sudah berganti berapa kali pemilik, dll.
 
 Mengapa permasalahan tersebut harus diselesaikan karena untuk memudahkan para peminat atau pembeli mobil bekas bisa mengetahui harga yang layak dari mobil yang akan mereka beli. Dan memudahkan penjual dalam menentukan harga yang pas dengan mobil yang akan mereka jual. Karena kualitas mobil dan harga mobil berpengaruh terhadap keputusan pembelian mobil bekas. Jika harga dan kualitasnya tidak cocok ada kemungkinan besar pembeli tidak akan jadi membeli. Maka diperlukanlah model analisis prediksi yang tepat mengenai harga mobil bekas berdasarkan spesifikasinya. )
@@ -27,26 +29,26 @@ Untuk  solusi permasalahan tersebut, tujuan atau goals nya adalah sebagai beriku
 ### Solution statements
 Prediksi harga adalah tujuan yang ingin dicapai. Harga merupakan variabel kontinu. Dan jenis permasalahan ini termasuk permasalahan regresi. Oleh karena itu, metodologi pada proyek ini adalah: membangun model regresi dengan harga mobil sebagai target.Solusi yang dapat dilakukan diantaranya :
 - Untuk teknik pra-pemrosesan data dilakukan pada tahap Data Preparation dengan teknik berikut :
--- Melakukan Encoding Fitur Kategori yaitu mengganti nilai data kategorik menjadi data numerik supaya data kategorik dapat diolah oleh model
--- Melakukan pembagian dataset menjadi dua bagian dengan rasio 90% untuk data latih dan 10% untuk data uji
--- Melakukan standardisasi data pada semua fitur data.
-- Untuk Mengetahui fitur yang paling berkorelasi dengan harga mobil menggunakan **Exploratory Data Analysis - Multivariate Analysis** : 
---Analisis Hubungan Fitur Numerik dengan Harga
---Analisis Hubungan Fitur Kategorik dengan Harga
+    - Melakukan Encoding Fitur Kategori yaitu mengganti nilai data kategorik menjadi data numerik supaya data kategorik dapat diolah oleh model
+    - Melakukan pembagian dataset menjadi dua bagian dengan rasio 90% untuk data latih dan 10% untuk data uji
+    - Melakukan standardisasi data pada semua fitur data.
+    - Untuk Mengetahui fitur yang paling berkorelasi dengan harga mobil menggunakan **Exploratory Data Analysis - Multivariate Analysis** : 
+        - Analisis Hubungan Fitur Numerik dengan Harga
+        - Analisis Hubungan Fitur Kategorik dengan Harga
 
 - Untuk membuat model machine learning yang dapat memprediksi harga mobil seakurat mungkin berdasarkan fitur-fitur yang ada saya menggunakan 3 model algoritma yaitu:
 1. **K-nearest neighbor**. Algoritma KNN menggunakan ‘kesamaan fitur’ untuk memprediksi nilai dari setiap data yang baru. KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k-tetangga terdekat. 
--- Kelebihan : mudah dipahami dan digunakan, tangguh terhadap data training sample yang noisy, efektif apabila data training sample-nya besar, memiliki konsistensi yang kuat.
--- Kekurangan : jika dihadapkan pada jumlah fitur atau dimensi yang besar dan nilai komputasi yang tinggi.
+    - Kelebihan : mudah dipahami dan digunakan, tangguh terhadap data training sample yang noisy, efektif apabila data training sample-nya besar, memiliki konsistensi yang kuat.
+    - Kekurangan : jika dihadapkan pada jumlah fitur atau dimensi yang besar dan nilai komputasi yang tinggi.
 
 2. **Random Forest**. Algoritma Random Forest adalah model prediksi yang terdiri dari beberapa model dan bekerja secara bersama-sama. Dalam teknik bagging, sejumlah model dilatih dengan teknik sampling with replacement (proses sampling dengan penggantian). Algoritma ini disusun dari banyak algoritma pohon (decision tree) yang pembagian data dan fiturnya dipilih secara acak. 
--- Kelebihan : dapat mengatasi noise dan missing value serta dapat mengatasi data dalam jumlah yang besar. 
--- Kekurangan : interpretasi yang sulit dan membutuhkan tuning model yang
+    - Kelebihan : dapat mengatasi noise dan missing value serta dapat mengatasi data dalam jumlah yang besar. 
+    - Kekurangan : interpretasi yang sulit dan membutuhkan tuning model yang
 tepat untuk data. 
 
 3. **Boosting Algorithm**. Algoritma boosting bekerja dengan membangun model dari data latih. Kemudian ia membuat model kedua yang bertugas memperbaiki kesalahan dari model pertama. Model ditambahkan sampai data latih terprediksi dengan baik atau telah mencapai jumlah maksimum model untuk ditambahkan. Algoritma ini menggabungkan beberapa model sederhana dan dianggap lemah (weak learners) sehingga membentuk suatu model yang kuat (strong ensemble learner). Pada setiap tahapan, model akan memeriksa apakah observasi yang dilakukan sudah benar. Untuk semua kasus dalam data latih memiliki weight atau bobot yang sama. Bobot yang lebih tinggi kemudian diberikan pada model yang salah sehingga mereka akan dimasukkan ke dalam tahapan selanjutnya. Proses iteratif ini berlanjut sampai model mencapai akurasi yang diinginkan. 
--- Kelebihan : Mampu meningkatkan hasil klasifikasi
--- Kekurangan : Lemah pada data dengan kompleksitas yang
+    - Kelebihan : Mampu meningkatkan hasil klasifikasi
+    - Kekurangan : Lemah pada data dengan kompleksitas yang
 tinggi
 
 ## Data Understanding
@@ -103,10 +105,10 @@ Dari histogram diatas kita bisa memperoleh beberapa informasi, antara lain:
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/multi%20fuel2.png)
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/multi%20model.png)
 ![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/multi%20location.png)
-![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/multi%20gear.png)
+![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/multi%20gear.png)  
 Dengan mengamati rata-rata harga relatif terhadap fitur kategori di atas, kita memperoleh insight sebagai berikut:
 - Pada fitur 'car_brand' jika dilihat setiap car brand memiliki harga rata-rata yang berbeda-beda tergantung dari nama brandnya. Jika berasal dari brand yang terkenal maka harga mobil akan cenderung mahal.Dari sini dapat disimpulkan bahwa car_brand memiliki pengaruh terhadap harga.
-- Pada fitur 'fuel' Diesel memiliki harga rata-rata tertinggi diantara grade lainnya. Mobil berbahan bakar diesel lebih mahal karena biaya perawatannya lebih mahal. Dari sini dapat disimpulkan bahwa fuel memiliki pengaruh terhadap harga. [Sumber](https://www.autofun.co.id/berita/bikin-penasaran-kenapa-sih-harga-mobil-diesel-lebih-mahal-dari-mobil-bensin-22220)
+- Pada fitur 'fuel' Diesel memiliki harga rata-rata tertinggi diantara grade lainnya. Mobil berbahan bakar diesel lebih mahal karena biaya perawatannya lebih mahal. Dari sini dapat disimpulkan bahwa fuel memiliki pengaruh terhadap harga. [(Sumber)](https://www.autofun.co.id/berita/bikin-penasaran-kenapa-sih-harga-mobil-diesel-lebih-mahal-dari-mobil-bensin-22220)
 
 - Pada fitur 'model' jika dilihat diagram model memang tidak terlihat datanya karena jumlah model yang terlalu banyak. Namun jika dilihat secara umum model dari sebuah mobil cenderung berpengaruh dengan harga mobil. Dari sini dapat disimpulkan bahwa model memiliki pengaruh terhadap harga.
 - Pada 'location'  disini dilihat bahwa daerah mumbai memiliki harga rata-rata lebih tinggi dari yang lainnya. Namun harga rata-rata cenderung sama disemua daerah. Dari sini dapat disimpulkan bahwa location memiliki pengaruh yayng kecil terhadap harga.
@@ -130,11 +132,11 @@ Setelah menerapkan 3 algoritma di atas didapat hasil prediksi bahwa algoritma **
 
 ## Evaluation
 ---
-Metrik digunakan untuk mengevaluasi seberapa baik model Anda dalam memprediksi harga. Untuk kasus regresi ini, metrik yang saya gunakan adalah Mean Squared Error (MSE).
+Metrik digunakan untuk mengevaluasi seberapa baik model Anda dalam memprediksi harga. Untuk kasus regresi ini, metrik yang saya gunakan adalah Mean Squared Error (MSE) dan Root Mean Squared Error (RSME).
 
  **MSE atau Mean Squared Error** Metrik ini menghitung selisih rata-rata nilai sebenarnya dengan nilai prediksi. 
--- Kelebihan MSE yaitu sederhana dalam perhitungan. 
--- Kelemahan yang dimiliki MSE adalah akurasi hasil peramalan sangat kecil       karena tidak memperhatikan apakah hasil peramalan lebih besar atau lebih      kecil dibandingkan kenyataannya. 
+ - Kelebihan MSE yaitu sederhana dalam perhitungan. 
+ - Kelemahan yang dimiliki MSE adalah akurasi hasil peramalan sangat kecil      karena tidak memperhatikan apakah hasil peramalan lebih besar atau lebih     kecil dibandingkan kenyataannya. 
 Berikut hasil evaluasi dengan metrik MSE :
 
  algorithm | train      |test
@@ -145,17 +147,18 @@ Boosting   | 803786     | 772898
 
 MSE didefinisikan dalam persamaan berikut :
 
-![Gambar Memotret](https://d17ivq9b7rppb3.cloudfront.net/original/academy/2021071619431112f1106e20559e77c855cea11d1b1479.jpeg)
+![Gambar Memotret](https://d17ivq9b7rppb3.cloudfront.net/original/academy/2021071619431112f1106e20559e77c855cea11d1b1479.jpeg)  
 
 N = jumlah dataset
 
 yi = nilai sebenarnya
 
-y_pred = nilai prediksi
+y_pred = nilai prediksi  
+
 
 **RMSE atau Root Mean Squared Error** RMSE (Root Mean Square Error) adalah akar kuadrat dari MSE. Nilai RMSE digunakan untuk menggambarkan tingkat error data model yang digunakan. Semakin kecil nilai RMSE maka semakin tinggi nilai akurasi sistem. 
--- Kelebihan : menghukum large error lebih sehingga bisa lebih tepat dalam beberapa kasus, menghindari penggunaan pengambilan nilai absolut, yang tidak diinginkan dalam banyak perhitungan matematis
--- Kekurangan : tidak mendeskripsikan kesalahan rata-rata saja dan memiliki implikasi lain yang lebih sulit untuk dipahami
+- Kelebihan : menghukum large error lebih sehingga bisa lebih tepat dalam beberapa kasus, menghindari penggunaan pengambilan nilai absolut, yang tidak diinginkan dalam banyak perhitungan matematis
+- Kekurangan : tidak mendeskripsikan kesalahan rata-rata saja dan memiliki implikasi lain yang lebih sulit untuk dipahami
 
 Berikut merupakan hasil evaluasi dari metrik RSME : 
 algorithm | train      |test
@@ -165,7 +168,8 @@ RF         | 281.514    | 342.261
 Boosting   | 28351.1    | 27801
 
 MSE didefinisikan dalam persamaan berikut :
-![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme.png)
+
+![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme.png)  
 
 n = jumlah dataset
 
