@@ -80,18 +80,18 @@ Berikut persamaannya:
       Batas atas = Q3 + 1.5 * IQR
 
 3. **Exploratory Data Analysis - Univariate Analysis** analisis univariate adalah melakukan analisis terhadap satu jenis (variasi). Dengan kata lain, analisis univariate merupakan proses untuk mengeksplorasi dan menjelaskan setiap variabel dalam kumpulan data secara terpisah. Cara yang digunakan adalah membagi fitur pada dataset menjadi dua bagian, yaitu numerical features dan categorical features. Lalu melakukan analisis terhadap **fitur kategori** terlebih dahulu ['Car_Brand', 'Model', 'Location', 'Fuel', 'Gear']. 
-![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/fuel%20uni.png)
+![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/fuel%20uni.png)  
 Dari data persentase dapat kita simpulkan bahwa bahan bakar yang paling banyak digunakan adalah jenis bahan bakar Petrol dan Diesel.
-![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/car%20brand%20uni.png)
-Dari data persentase dapat kita simpulkan bahwa car brand paling banyak muncul adalah brand Maruti.
-![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/gear%20uni.png)
+![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/car%20brand%20uni.png)  
+Dari data persentase dapat kita simpulkan bahwa car brand paling banyak muncul adalah brand Maruti.  
+![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/gear%20uni.png)  
 Dari data persentase dapat kita simpulkan bahwa jenis transmisi gigi mobil yang paling banyak adalah manual.
-![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/model%20uni.png)
+![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/model%20uni.png)  
 Dari data persentase dapat kita lihat kalau diagram terlalu jenis model sehingga diagram tidak bisa terbaca. Namun data analisis menyebutkan model Alto 800LXI adalah model yang lebih banyak keluar dengan 143 jumlah sampel.
-![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/location%20uni.png)
+![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/location%20uni.png)  
 Dari data persentase dapat kita simpulkan bahwa daerah yang paling banyak menjual mobil bekas adalah kota Delhi, lalu diikuti kota Mumbai, Bangalore, Chennai, dan Hyderabad.
 Setelah fitur kategori dilanjutkan dengan **fitur numerik** dengan melihat histogram masing-masing fiturnya, seperti berikut :
-![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/histo%20numerik.png)
+![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/histo%20numerik.png)  
 Dari histogram diatas kita bisa memperoleh beberapa informasi, antara lain:
     - Peningkatan harga mobil sebanding dengan penurunan jumlah driven.
     - Rentang harga mobil cukup tinggi yaitu dari skala EMI 7000 sampai 10000.
@@ -114,7 +114,7 @@ Dengan mengamati rata-rata harga relatif terhadap fitur kategori di atas, kita m
 
 ## Data Preparation
 ---
-Teknik yang saya gunakan pada tahap data preparation adalah:
+Berikut merupakan solusi dari teknik pra-premosesan yang sudah disebutkan sebelumnya yang saya gunakan pada tahap data preparation adalah:
 - **Encoding Fitur Kategori** Melakukan proses encoding fitur kategori dengan teknik one-hot-encoding. Proses encoding ini dilakukan dengan fitur get_dummies. Fungsinya adalah mengganti nilai data kategorik menjadi data numerik . Variabel kategori dalam dataset ini, yaitu 'Car_Brand', 'Model', 'Location', 'Fuel', 'Gear'. Alasan menggunakan teknik ini adalah karena model machine learning tidak dapat mengolah data kategorik, sehingga perlu melakukan konversi data kategorik menjadi data numerik.
 - **Train_test_spilt** Pembagian dataset dengan fungsi train_test_split dari library sklearn. Membagi dataset menjadi data latih (train) dan data uji (test). Perbandingan yang saya terapkan adalah 90:10, 90% untuk data latih dan 10% untuk data uji. Alasannya adalah agar tidak mengotori data uji dengan informasi yang didapat dari data latih dan menghindari kebocoran data (data leakage). 
 - **Standarisasi**  Teknik yang digunakan adalah teknik StandarScaler dari library Scikitlearn, StandardScaler melakukan proses standarisasi fitur dengan mengurangkan mean (nilai rata-rata) kemudian membaginya dengan standar deviasi untuk menggeser distribusi. StandardScaler menghasilkan distribusi dengan standar deviasi sama dengan 1 dan mean sama dengan 0. Alasan menggunakan teknik ini adalah supaya performa model lebih baik dan konvergen lebih cepat ketika dimodelkan. Karena data memiliki skala relatif sama atau mendekati distribusi normal. Selain itu proses scaling dan standarisasi membantu untuk membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma.
@@ -131,16 +131,19 @@ Setelah menerapkan 3 algoritma di atas didapat hasil prediksi bahwa algoritma **
 ## Evaluation
 ---
 Metrik digunakan untuk mengevaluasi seberapa baik model Anda dalam memprediksi harga. Untuk kasus regresi ini, metrik yang saya gunakan adalah Mean Squared Error (MSE).
+
+ **MSE atau Mean Squared Error** Metrik ini menghitung selisih rata-rata nilai sebenarnya dengan nilai prediksi. 
+-- Kelebihan MSE yaitu sederhana dalam perhitungan. 
+-- Kelemahan yang dimiliki MSE adalah akurasi hasil peramalan sangat kecil       karena tidak memperhatikan apakah hasil peramalan lebih besar atau lebih      kecil dibandingkan kenyataannya. 
+Berikut hasil evaluasi dengan metrik MSE :
+
  algorithm | train      |test
 -----------|------------|-----	
 KNN        | 1.1639e+06 | 1.74399e+06
 RF         | 79.2499    | 117.142
 Boosting   | 803786     | 772898
-**MSE atau Mean Squared Error** Metrik ini menghitung selisih rata-rata nilai sebenarnya dengan nilai prediksi. 
--- Kelebihan MSE yaitu sederhana dalam perhitungan. 
--- Kelemahan yang dimiliki MSE adalah akurasi hasil peramalan sangat kecil       karena tidak memperhatikan apakah hasil peramalan lebih besar atau lebih      kecil dibandingkan kenyataannya. 
 
-MSE didefinisikan dalam persamaan berikut
+MSE didefinisikan dalam persamaan berikut :
 
 ![Gambar Memotret](https://d17ivq9b7rppb3.cloudfront.net/original/academy/2021071619431112f1106e20559e77c855cea11d1b1479.jpeg)
 
@@ -150,6 +153,27 @@ yi = nilai sebenarnya
 
 y_pred = nilai prediksi
 
+**RMSE atau Root Mean Squared Error** RMSE (Root Mean Square Error) adalah akar kuadrat dari MSE. Nilai RMSE digunakan untuk menggambarkan tingkat error data model yang digunakan. Semakin kecil nilai RMSE maka semakin tinggi nilai akurasi sistem. 
+-- Kelebihan : menghukum large error lebih sehingga bisa lebih tepat dalam beberapa kasus, menghindari penggunaan pengambilan nilai absolut, yang tidak diinginkan dalam banyak perhitungan matematis
+-- Kekurangan : tidak mendeskripsikan kesalahan rata-rata saja dan memiliki implikasi lain yang lebih sulit untuk dipahami
+
+Berikut merupakan hasil evaluasi dari metrik RSME : 
+algorithm | train      |test
+-----------|------------|-----	
+KNN        | 34115.9    | 41761.1
+RF         | 281.514    | 342.261
+Boosting   | 28351.1    | 27801
+
+MSE didefinisikan dalam persamaan berikut :
+![Gambar Memotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme.png)
+
+n = jumlah dataset
+
+Yi = nilai sebenarnya
+
+yi = nilai prediksi
+
 **---Ini adalah bagian akhir laporan---**
+
 
 
