@@ -32,7 +32,7 @@ Prediksi harga adalah tujuan yang ingin dicapai. Harga merupakan variabel kontin
     - Melakukan Encoding Fitur Kategori yaitu mengganti nilai data kategorik menjadi data numerik supaya data kategorik dapat diolah oleh model
     - Melakukan pembagian dataset menjadi dua bagian dengan rasio 90% untuk data latih dan 10% untuk data uji
     - Melakukan standardisasi data pada semua fitur data.
-    - Untuk Mengetahui fitur yang paling berkorelasi dengan harga mobil menggunakan **Exploratory Data Analysis - Multivariate Analysis** : 
+- Untuk Mengetahui fitur yang paling berkorelasi dengan harga mobil menggunakan **Exploratory Data Analysis - Multivariate Analysis** : 
         - Analisis Hubungan Fitur Numerik dengan Harga
         - Analisis Hubungan Fitur Kategorik dengan Harga
 
@@ -163,9 +163,9 @@ y_pred = nilai prediksi
 Berikut merupakan hasil evaluasi dari metrik RSME : 
 algorithm | train      |test
 -----------|------------|-----	
-KNN        | 34115.9    | 41761.1
-RF         | 281.514    | 342.261
-Boosting   | 28351.1    | 27801
+KNN        | 34.1159    | 41.7611
+RF         | 0.281514   | 0.342261
+Boosting   | 28.3511    | 27.801
 
 MSE didefinisikan dalam persamaan berikut :
 
