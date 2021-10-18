@@ -2,14 +2,14 @@
 ---
 ## Domain Proyek
 ----
-Pada projek ini akan dibuat sistem rekomendasi film. Perkembangan   teknologi informasi   dan   komunikasi   telah   meningkat   dalam   berbagai bidang  seperti  bidang  ekonomi,  ilmu  pengetahuan,  industri  maupun  dalam  kehidupan  sosial. Dampak dari perkembangan ini juga semakin meningkatkan perkembangan industri per film-an. Sekarang ini film sangat banyak dipasaran. Tidak diherankan lagi karena setiap tahunnya film baru pasti akan rilis. 
+Pada projek ini akan dibuat sistem rekomendasi film. Perkembangan   teknologi informasi   dan   komunikasi   telah   meningkat   dalam   berbagai bidang  seperti  bidang  ekonomi,  ilmu  pengetahuan,  industri  maupun  dalam  kehidupan  sosial. Dampak dari perkembangan ini juga semakin meningkatkan perkembangan industri per film-an. Sekarang ini film sangat banyak dipasaran. Tidak diherankan lagi karena setiap tahunnya film baru pasti akan rilis. Sekarang ini juga sekali aplikasi streaming film di internet. Aplikasi itu menawarkan pengguna untuk bisa menonton film secara online dimana saja dan kapan saja. Selain itu fitur terbaik dari aplikasi ini salah satunya adalah fitur rekomendasinya yang dapat memberikan rekomendasi film-film terbaik kepada pengguna. Salah satunya adalah aplikasi MovieLens.
 
-Banyak dari penggemar film yang membutuhkan sistem rekomendasi yang bagus untuk mencari film yang bagus untuk mereka. Dengan jumlah  film  yang  banyak yang mempunyai berbagai macam genre,  lalu dibuatlah  klasifikasi genre  film  untuk  membantu user dalam mencari dan memilih film yang tepat dilihat.  Genre dalam  film  merupakan  elemen  utama  dalam  suatu sistem  rekomendasi, karena dengan  adanya  pengklasifikasian genre  dapat  memudahkan  sistem  dalam  mencari  sebuah  film berdasarkan tipe-tipe tertentu, penonton juga lebih mudah dalam mengidentifikasi film seperti apa yang  ditayangkan. 
+Banyak dari penggemar film yang membutuhkan sistem rekomendasi yang bagus untuk mencari film yang bagus untuk mereka. Rekomendasi film bisa berdasarkan genre atau rating. Dengan jumlah  film  yang  banyak yang mempunyai berbagai macam genre,  maka dibuatlah  klasifikasi genre  film  untuk  membantu user dalam mencari dan memilih film yang tepat dilihat. Genre dalam  film  merupakan  elemen  utama  dalam  suatu sistem  rekomendasi, karena dengan  adanya  pengklasifikasian genre  dapat  memudahkan  sistem  dalam  mencari  sebuah  film berdasarkan tipe-tipe tertentu, penonton juga lebih mudah dalam mengidentifikasi film seperti apa yang  ditayangkan. Dan bagi penonton yang ingin menonton film yang bagus namun tidak berdasarkan genre tertentu bisa mencari rekomendasi film dengan rating tertinggi. 
 Sumber Referensi : [Referensi 1](https://media.neliti.com/media/publications/103958-ID-rancang-bangun-aplikasi-rekomendasi-film.pdf), [Referensi 2](https://mpra.ub.uni-muenchen.de/83349/1/MPRA_paper_83349.pdf), [Referensi 3](http://ekonobis.unram.ac.id/index.php/ekonobis/article/view/47/44)
 
 ## Business Understanding
 ---
-Latar belakang permasalahan ini adalah para penonton film yang ingin mendapat rekomendasi film terbaiknya. Mereka ingin menonton film yang mereka suka atau menonton film yang memiliki rating tertinggi. Jadi permasalahan yang dihadapi adalah bagaimana membuat sistem rekomendasi film dengan kategori sesuai dengan film yang disukai dan film terbaik yang memiliki rating tertinggi. Dan berikut uraian lebih lengkap mengenai penjelasan permasalahan tersebut :
+Latar belakang permasalahan ini adalah para penonton film yang ingin mendapat rekomendasi film terbaiknya di MovieLens. Mereka ingin menonton film yang mereka suka atau menonton film yang memiliki rating tertinggi. Jadi permasalahan yang dihadapi adalah bagaimana membuat sistem rekomendasi film dengan kategori sesuai dengan film yang disukai dan film terbaik yang memiliki rating tertinggi. Dan berikut uraian lebih lengkap mengenai penjelasan permasalahan tersebut :
 
 ### Problem Statements
 Dari permasalahan yang sudah disebutkan diatas berikut ini merupakan rincian masalah yang perlu diselesaikan di proyek ini:
@@ -183,12 +183,12 @@ Metrik evaluasi model yang saya gunakan pada projek ini adalah :
 Berikut merupakan hasil evaluasi dari metrik RSME :
 ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme_hasil.png)   
 ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme_metrik.png)  
-MSE didefinisikan dalam persamaan berikut :
+MSE didefinisikan dalam persamaan berikut :  
 ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme.png)  
-Keterangan :
-n = jumlah dataset
-Yi = nilai sebenarnya
-yi = nilai prediksi
+Keterangan :  
+n = jumlah dataset  
+Yi = nilai sebenarnya  
+yi = nilai prediksi  
 
 - **MSE atau Mean Squared Error**, Metrik ini menghitung selisih rata-rata nilai sebenarnya dengan nilai prediksi.
     - Kelebihan MSE yaitu sederhana dalam perhitungan.
@@ -196,25 +196,25 @@ yi = nilai prediksi
 Berikut hasil evaluasi dengan metrik MSE :
 ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/sme_hasil.png)  
 ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mse_metrik.png)  
-MSE didefinisikan dalam persamaan berikut :
+MSE didefinisikan dalam persamaan berikut :   
 ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mse.jpg)  
-Keterangan : 
-N = jumlah dataset
-yi = nilai sebenarnya
-y_pred = nilai prediksi
+Keterangan :  
+N = jumlah dataset  
+yi = nilai sebenarnya  
+y_pred = nilai prediksi  
 
 - **Mean Absolute Error (MAE)** MAE mengukur besarnya rata-rata kesalahan dalam serangkaian prediksi, tanpa mempertimbangkan arahnya. Ini adalah rata-rata di atas sampel uji dari perbedaan absolut antara prediksi dan observasi aktual di mana semua perbedaan individu memiliki bobot yang sama.
     - Kelebihan : MAE kuat terhadap outlier
     - Kekurangan : MAE tidak terdiferensiasi ketika nilai aktual = nilai prediksi
-Berikut adalah hasil evaluasi dari MAE :
+Berikut adalah hasil evaluasi dari MAE :   
 ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mae_hasil.png)  
 ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mae_metrik.png)  
-MAE didefinisikan sebagai berikut :
+MAE didefinisikan sebagai berikut :  
 ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mae.png)  
-Keterangan : 
-N = jumlah dataset
-yi = nilai sebenarnya
-y = nilai prediksi
+Keterangan :  
+N = jumlah dataset  
+yi = nilai sebenarnya  
+y = nilai prediksi  
 
 **---Ini adalah bagian akhir laporan---**
 
