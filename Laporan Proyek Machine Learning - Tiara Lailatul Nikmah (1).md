@@ -5,7 +5,7 @@
 Pada projek ini akan dibuat sistem rekomendasi film. Perkembangan   teknologi informasi   dan   komunikasi   telah   meningkat   dalam   berbagai bidang  seperti  bidang  ekonomi,  ilmu  pengetahuan,  industri  maupun  dalam  kehidupan  sosial. Dampak dari perkembangan ini juga semakin meningkatkan perkembangan industri per film-an. Sekarang ini film sangat banyak dipasaran. Tidak diherankan lagi karena setiap tahunnya film baru pasti akan rilis. 
 
 Banyak dari penggemar film yang membutuhkan sistem rekomendasi yang bagus untuk mencari film yang bagus untuk mereka. Dengan jumlah  film  yang  banyak yang mempunyai berbagai macam genre,  lalu dibuatlah  klasifikasi genre  film  untuk  membantu user dalam mencari dan memilih film yang tepat dilihat.  Genre dalam  film  merupakan  elemen  utama  dalam  suatu sistem  rekomendasi, karena dengan  adanya  pengklasifikasian genre  dapat  memudahkan  sistem  dalam  mencari  sebuah  film berdasarkan tipe-tipe tertentu, penonton juga lebih mudah dalam mengidentifikasi film seperti apa yang  ditayangkan. 
-Sumber Referensi : [Referensi 1](https://media.neliti.com/media/publications/103958-ID-rancang-bangun-aplikasi-rekomendasi-film.pdf), [Referensi 2](https://mpra.ub.uni-muenchen.de/83349/1/MPRA_paper_83349.pdf)
+Sumber Referensi : [Referensi 1](https://media.neliti.com/media/publications/103958-ID-rancang-bangun-aplikasi-rekomendasi-film.pdf), [Referensi 2](https://mpra.ub.uni-muenchen.de/83349/1/MPRA_paper_83349.pdf), [Referensi 3](http://ekonobis.unram.ac.id/index.php/ekonobis/article/view/47/44)
 
 ## Business Understanding
 ---
@@ -38,12 +38,12 @@ Solusi yang dapat dilakukan untuk mencapai tujuan diatas adalah sebagai berikut 
     Beberapa teknik yang digunakan untuk membuat sistem rekomendasi Content Based Filtering di proyek ini diantaranya :
          - TF-IDF Vectorizer
          Teknik tersebut juga akan digunakan pada sistem rekomendasi untuk menemukan representasi fitur penting dari setiap kategori genre. Teknik ini menggunakan fungsi TfidfVectorizer() dari sklearn.  TfidfVectorizer akan melakukan proses tokenisasi pada teks, mempelajari kosa kata, melakukan pembobotan frekuensi dokumen secara terbalik (inverse), dan memungkinkan Anda untuk melakukan proses encoding teks baru.
-         Berikut adalah definisi TF suatu term X pada dokumen d:
-         ![Gambar Metotret](https://d17ivq9b7rppb3.cloudfront.net/original/academy/202107291610325784de49f00104b077d2ccacea4d6ba5.jpeg)
-         IDF untuk suatu term X didefinisikan sebagai berikut:
-        ![Gambar Metotret](https://d17ivq9b7rppb3.cloudfront.net/original/academy/2021072916103253d5e45cb6d14c5e11c5642c468976bf.jpeg)
-        Terakhir, untuk menghitung skor atau bobot untuk TF-IDF, kalikan nilai TF dengan IDF seperti di bawah ini:
-        ![Gambar Metotret](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20210729161032371ea6d17d823e17c6967f0e74fb47f7.jpeg)
+         Berikut adalah definisi TF suatu term X pada dokumen :  
+         ![Gambar Metotret](https://d17ivq9b7rppb3.cloudfront.net/original/academy/202107291610325784de49f00104b077d2ccacea4d6ba5.jpeg)  
+         IDF untuk suatu term X didefinisikan sebagai berikut:  
+        ![Gambar Metotret](https://d17ivq9b7rppb3.cloudfront.net/original/academy/2021072916103253d5e45cb6d14c5e11c5642c468976bf.jpeg)  
+        Terakhir, untuk menghitung skor atau bobot untuk TF-IDF, kalikan nilai TF dengan IDF seperti di bawah ini:  
+        ![Gambar Metotret](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20210729161032371ea6d17d823e17c6967f0e74fb47f7.jpeg)  
         - Cosine Similarity
         Fungsi cosine_similarity digunakan untuk menghitung derajat kesamaan (similarity degree) antar film.
         Cara menghitungnya adalah dengan rumus berikut ini :
@@ -112,12 +112,12 @@ Tahapan yang dilakukan untuk memahami data adalah :
 
 Terakhir, inilah gambar visualisasi data dari data numerik dan kategorik :
 - Data Kategorik
-    - **Title**
-    ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/title.png)
+    - **Title**  
+    ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/title.png)  
     Dari grafik diatas bisa kita lihat karena data judul film terlalu banyak jadi terlalu sulit untuk membacanya. Namun kita masih bisa melihat beberapa data judul film melalui tabel berikut :
-    ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/title2.png)
-    - **Genre**
-     ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/genres.png)
+    ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/title2.png)  
+    - **Genre**  
+     ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/genres.png)  
     Dari grafik diatas bisa kita lihat karena data genre terlalu banyak jadi terlalu sulit untuk membacanya. Namun kita masih bisa melihat beberapa data genre melalui tabel berikut :
      ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/genres2.png)
 - Data Numerik
@@ -169,22 +169,22 @@ Metrik evaluasi model yang saya gunakan pada projek ini adalah :
 - Pada **Content Based Filtering**
     - **Precision**, Precision menggambarkan tingkat keakuratan antara data yang diminta dengan hasil prediksi yang diberikan oleh model. Atau bisa diartikan kita bisa mengecek seberapa akurat hasil rekomendasi yang kita berikan dengan permintaan penggunan. 
     Berikut cara untuk menghitung presisi di sistem rekomendasi :
-    ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/presisi.png)
+    ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/presisi.png)  
     Perhiungan Persisi : 
-    ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/recomend1.png)
-    ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/recomend2.png)
-    P = 4/5
-    P = 80%
-    Jika dilihat dari gambar diatas, diketahui bahwa Film Fun and Fancy Free termasuk ke dalam kategori Animation|Childern|Musical. Dari 5 item yang direkomendasikan, 4 item memiliki kategori Animation|Childern|Musical dan satu kategori Animation|Childern|Drama|Musical. Artinya, precision sistem kita sebesar 4/5 atau 80%.
+    ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/recomend1.png)  
+    ![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/recomend2.png)  
+    Precision = 4/5  
+    Precision = 80%  
+    Jika dilihat dari gambar diatas, diketahui bahwa Film Fun and Fancy Free termasuk ke dalam kategori Animation|Childern|Musical. Dari 5 item yang direkomendasikan, 4 item memiliki kategori Animation|Childern|Musical dan satu kategori Animation|Childern|Drama|Musical. Artinya, precision sistem kita sebesar 80%.
 - Pada **Collaborative Filtering**
     - **RMSE atau Root Mean Squared Error RMSE** adalah akar kuadrat dari MSE. Nilai RMSE digunakan untuk menggambarkan tingkat error data model yang digunakan. Semakin kecil nilai RMSE maka semakin tinggi nilai akurasi sistem.
         - Kelebihan : menghukum large error lebih sehingga bisa lebih tepat dalam beberapa kasus, menghindari penggunaan pengambilan nilai absolut, yang tidak diinginkan dalam banyak perhitungan matematis
         - Kekurangan : tidak mendeskripsikan kesalahan rata-rata saja dan memiliki implikasi lain yang lebih sulit untuk dipahami
 Berikut merupakan hasil evaluasi dari metrik RSME :
-![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme_hasil.png)
-![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme_metrik.png)
+![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme_hasil.png)   
+![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme_metrik.png)  
 MSE didefinisikan dalam persamaan berikut :
-![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme.png)
+![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/rsme.png)  
 Keterangan :
 n = jumlah dataset
 Yi = nilai sebenarnya
@@ -194,10 +194,10 @@ yi = nilai prediksi
     - Kelebihan MSE yaitu sederhana dalam perhitungan.
     - Kelemahan yang dimiliki MSE adalah akurasi hasil peramalan sangat kecil karena tidak memperhatikan apakah hasil peramalan lebih besar atau lebih kecil dibandingkan kenyataannya. 
 Berikut hasil evaluasi dengan metrik MSE :
-![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/sme_hasil.png)
-![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mse_metrik.png)
+![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/sme_hasil.png)  
+![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mse_metrik.png)  
 MSE didefinisikan dalam persamaan berikut :
-![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mse.jpg)
+![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mse.jpg)  
 Keterangan : 
 N = jumlah dataset
 yi = nilai sebenarnya
@@ -207,10 +207,10 @@ y_pred = nilai prediksi
     - Kelebihan : MAE kuat terhadap outlier
     - Kekurangan : MAE tidak terdiferensiasi ketika nilai aktual = nilai prediksi
 Berikut adalah hasil evaluasi dari MAE :
-![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mae_hasil.png)
-![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mae_metrik.png)
+![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mae_hasil.png)  
+![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mae_metrik.png)  
 MAE didefinisikan sebagai berikut :
-![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mae.png)
+![Gambar Metotret](https://github.com/Tiara-la/Gambar-EDA/raw/main/mae.png)  
 Keterangan : 
 N = jumlah dataset
 yi = nilai sebenarnya
